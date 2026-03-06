@@ -4,36 +4,44 @@ import { QuoteForm } from "@/components/quote-form";
 import styles from "./page.module.css";
 
 const companyStats = [
-  { value: "17+", label: "Years designing and delivering residential and mixed-use spaces" },
-  { value: "240", label: "Completed villas, apartments, offices, and renovation projects" },
-  { value: "24", label: "Active construction sites under project-managed delivery" },
-  { value: "93%", label: "Clients arriving through referrals and repeat partnerships" },
+  { value: "17+", label: "Years shaping homes, apartment blocks, and commercial spaces" },
+  { value: "240", label: "Completed construction, fit-out, and renovation projects" },
+  { value: "24", label: "Active projects managed through site and design coordination" },
+  { value: "93%", label: "Clients coming through referrals and repeat relationships" },
 ];
 
 const services = [
   {
     title: "House Construction",
+    image: "/photos/hero-house.jpg",
+    label: "Residential Build",
     blurb:
-      "Turnkey structural delivery for villas, townhouses, duplex homes, and premium residential communities.",
-    bullets: ["Site planning", "Civil execution", "Quality supervision"],
+      "Turnkey house construction for villas, duplex homes, and premium plotted developments with tight site coordination.",
+    bullets: ["Planning and approvals", "Structural execution", "Finish quality control"],
   },
   {
     title: "Interior Design",
+    image: "/photos/living-room.jpg",
+    label: "Luxury Interiors",
     blurb:
-      "Warm, material-rich interiors shaped around storage efficiency, natural light, and daily comfort.",
-    bullets: ["Modular detailing", "Custom finishes", "Furniture coordination"],
+      "Refined interior environments designed around lighting, storage, material balance, and everyday comfort.",
+    bullets: ["Material palettes", "Custom furniture layout", "Lighting and decor detailing"],
   },
   {
     title: "Architecture",
+    image: "/photos/office-tower.jpg",
+    label: "Facade and Form",
     blurb:
-      "Concept-to-sanction architecture with facade studies, circulation planning, and build-ready documentation.",
-    bullets: ["Master planning", "3D visualisation", "Drawing packages"],
+      "Architecture services from concept studies to build-ready drawings with a strong focus on elegant modern forms.",
+    bullets: ["Concept development", "3D visualisation", "Construction documentation"],
   },
   {
     title: "Renovation",
+    image: "/photos/renovation.jpg",
+    label: "Retrofit Works",
     blurb:
-      "Targeted structural upgrades and full property renewal programs that modernise existing spaces with minimal waste.",
-    bullets: ["Retrofit design", "Facade renewal", "Interior remodelling"],
+      "Renovation and retrofit planning for aging homes, offices, and mixed-use properties that need a sharper second life.",
+    bullets: ["Structural upgrades", "Layout reworking", "Modern finish refresh"],
   },
 ];
 
@@ -41,26 +49,29 @@ const completedProjects = [
   {
     name: "Horizon Crest Residences",
     location: "Whitefield, Bengaluru",
+    badge: "Residential",
     summary:
-      "A gated villa cluster balancing landscaped courtyards, high skylights, and low-maintenance stone finishes.",
-    image: "/project-horizon.svg",
+      "A calm luxury villa campus with deep glazing, polished stone, and landscape-led private courts.",
+    image: "/photos/hero-house.jpg",
     stat: "82,000 sq ft delivered",
   },
   {
-    name: "Luma Business Atrium",
-    location: "Koramangala, Bengaluru",
+    name: "Aster Lobby Suites",
+    location: "Richmond Town, Bengaluru",
+    badge: "Interior Fit-Out",
     summary:
-      "A commercial workspace with daylight-driven floorplates, acoustic meeting zones, and a hospitality-led lobby.",
-    image: "/project-luma.svg",
-    stat: "11-floor office retrofit",
+      "Reception and lobby transformation with warm timber textures, marble detailing, and soft ambient lighting.",
+    image: "/photos/interior-lobby.jpg",
+    stat: "Premium common-area upgrade",
   },
   {
-    name: "Renova Heritage House",
-    location: "Mysuru, Karnataka",
+    name: "Stoneframe Corporate Hub",
+    location: "Electronic City, Bengaluru",
+    badge: "Architecture",
     summary:
-      "A heritage renovation combining preserved frontage, upgraded services, and contemporary family interiors.",
-    image: "/project-renova.svg",
-    stat: "14-month restoration",
+      "Facade-focused design refinement for a commercial block with glazing control and cleaner massing lines.",
+    image: "/photos/project-facade.jpg",
+    stat: "Envelope and front-elevation refresh",
   },
 ];
 
@@ -68,29 +79,51 @@ const ongoingProjects = [
   {
     phase: "In Construction",
     title: "Cedar Peak Apartments",
+    image: "/photos/construction-site.jpg",
     text:
-      "Mid-rise residences with stepped balconies, rooftop amenities, and a fast-tracked MEP execution package.",
+      "Mid-rise residential blocks moving through civil execution, staged slab work, and services integration.",
     meta: "Target handover: December 2026",
   },
   {
     phase: "Interior Fit-Out",
     title: "Northline Signature Villas",
+    image: "/photos/living-room.jpg",
     text:
-      "Luxury home interiors featuring walnut finishes, concealed lighting, and integrated smart-home control.",
-    meta: "52 villas under phased delivery",
+      "Large-format marble, layered lighting, and bespoke furniture packages under phased interior delivery.",
+    meta: "52 villas under finishing works",
   },
   {
     phase: "Design Development",
-    title: "Axis Healthcare Block",
+    title: "Axis Business Centre",
+    image: "/photos/office-tower.jpg",
     text:
-      "A specialty outpatient building focused on efficient patient movement, sterile zoning, and energy-conscious materials.",
-    meta: "Approvals and cost planning in progress",
+      "A commercial architecture package focused on efficient circulation, crisp elevation lines, and cost discipline.",
+    meta: "Approvals and BOQ planning in progress",
+  },
+];
+
+const photoMoments = [
+  {
+    title: "Exterior architecture with premium material depth",
+    image: "/photos/hero-house.jpg",
+  },
+  {
+    title: "Reception spaces designed for a polished first impression",
+    image: "/photos/interior-lobby.jpg",
+  },
+  {
+    title: "Living rooms with warm light, marble, and layered detailing",
+    image: "/photos/living-room.jpg",
+  },
+  {
+    title: "Modern elevations and glazing-led facade composition",
+    image: "/photos/project-facade.jpg",
   },
 ];
 
 const quotationHighlights = [
   "Transparent structural, finishing, and MEP cost planning.",
-  "Design-led recommendations for budget, timeline, and materials.",
+  "Design-led recommendations for budget, timeline, and material strategy.",
   "A response from the team within one business day.",
 ];
 
@@ -109,8 +142,8 @@ export default function Home() {
         <nav className={styles.nav} aria-label="Primary navigation">
           <a href="#company">Company</a>
           <a href="#services">Services</a>
+          <a href="#gallery">Gallery</a>
           <a href="#projects">Projects</a>
-          <a href="#quote">Quotation</a>
           <a href="#contact">Contact</a>
         </nav>
 
@@ -121,25 +154,26 @@ export default function Home() {
 
       <main className={styles.main}>
         <section className={`${styles.section} ${styles.hero}`} id="home">
-          <div className={styles.heroCopy}>
-            <p className={styles.eyebrow}>Built for modern living and lasting value</p>
+          <div className={styles.heroContent}>
+            <p className={styles.eyebrow}>Built with elegance, managed with precision</p>
             <h1 className={styles.heroTitle}>
-              Elegant spaces crafted by a building company that knows how to
-              design, deliver, and detail.
+              Building beautiful homes, interiors, and architecture with real
+              site experience behind every detail.
             </h1>
             <p className={styles.heroText}>
-              Aurum Buildworks creates homes, commercial spaces, and
-              renovations that feel premium from the first sketch to the final
-              handover. We combine architecture, construction, and interior
-              execution under one team.
+              Aurum Buildworks brings architecture, house construction,
+              renovation, and interior design together in one disciplined
+              delivery model. The result is cleaner coordination, stronger
+              finishing quality, and spaces that feel premium in real life, not
+              just on paper.
             </p>
 
             <div className={styles.heroActions}>
-              <a className={styles.primaryAction} href="#projects">
-                Explore Projects
+              <a className={styles.primaryAction} href="#gallery">
+                View Gallery
               </a>
-              <a className={styles.secondaryAction} href="#contact">
-                Talk to the Team
+              <a className={styles.secondaryAction} href="#quote">
+                Get Quotation
               </a>
             </div>
 
@@ -153,33 +187,51 @@ export default function Home() {
             </div>
           </div>
 
-          <div className={styles.heroPanel}>
-            <div className={styles.heroPanelHeader}>
-              <p>Featured project snapshot</p>
-              <span>Luxury residential campus</span>
-            </div>
-            <div className={styles.heroPanelImage}>
+          <div className={styles.heroMediaGrid}>
+            <article className={`${styles.photoCard} ${styles.heroPrimaryPhoto}`}>
               <Image
-                src="/hero-structure.svg"
-                alt="Illustration of an elegant residential construction project"
+                src="/photos/hero-house.jpg"
+                alt="Luxury modern house exterior"
                 fill
                 priority
-                sizes="(max-width: 900px) 100vw, 44vw"
+                sizes="(max-width: 1120px) 100vw, 34vw"
               />
-            </div>
-            <div className={styles.heroPanelFooter}>
-              <div>
-                <strong>Stone, light, and calm lines</strong>
-                <p>
-                  Contemporary forms, structured schedules, and premium
-                  finishing standards from one integrated team.
-                </p>
+              <div className={styles.photoOverlay}>
+                <p className={styles.photoKicker}>Featured Residence</p>
+                <h2 className={styles.photoTitle}>Stone, glass, calm light, and precise construction lines.</h2>
+                <div className={styles.photoMetaRow}>
+                  <span className={styles.photoMetaChip}>Design + Build</span>
+                  <span className={styles.photoMetaChip}>Premium Finishes</span>
+                </div>
               </div>
-              <ul className={styles.heroPanelList}>
-                <li>Architecture + execution</li>
-                <li>Interior detailing</li>
-                <li>Quality-led site supervision</li>
-              </ul>
+            </article>
+
+            <div className={styles.heroSecondaryStack}>
+              <article className={`${styles.photoCard} ${styles.heroSecondaryPhoto}`}>
+                <Image
+                  src="/photos/interior-lobby.jpg"
+                  alt="Elegant building lobby interior"
+                  fill
+                  sizes="(max-width: 1120px) 100vw, 18vw"
+                />
+                <div className={styles.photoOverlay}>
+                  <p className={styles.photoKicker}>Arrival Experience</p>
+                  <h2 className={styles.photoTitle}>Hotel-style lobbies and reception zones.</h2>
+                </div>
+              </article>
+
+              <article className={`${styles.photoCard} ${styles.heroSecondaryPhoto}`}>
+                <Image
+                  src="/photos/office-tower.jpg"
+                  alt="Modern architecture facade detail"
+                  fill
+                  sizes="(max-width: 1120px) 100vw, 18vw"
+                />
+                <div className={styles.photoOverlay}>
+                  <p className={styles.photoKicker}>Architecture</p>
+                  <h2 className={styles.photoTitle}>Sharp elevations with modern facade discipline.</h2>
+                </div>
+              </article>
             </div>
           </div>
         </section>
@@ -189,75 +241,154 @@ export default function Home() {
             <p className={styles.eyebrow}>Company Information</p>
             <h2 className={styles.sectionTitle}>About the building company</h2>
             <p className={styles.sectionText}>
-              We manage the full building lifecycle with a detail-oriented
-              approach, from concept design and approvals through execution,
-              interiors, and after-handover support.
+              We handle the full lifecycle of residential and commercial
+              building projects, from concept design and approvals to
+              construction, interiors, and handover coordination.
             </p>
           </div>
 
-          <div className={styles.companyGrid}>
+          <div className={styles.companyLayout}>
             <article className={styles.storyCard}>
               <h3>Experience and services under one roof</h3>
               <p>
-                Aurum Buildworks was shaped for clients who want fewer handoff
-                points and better control over design quality, cost, and time.
-                The studio brings architects, project managers, interior
-                specialists, and site engineers together so each decision keeps
-                the final build in focus.
+                Aurum Buildworks is structured for clients who want thoughtful
+                design and clean execution without juggling multiple disconnected
+                vendors. Architects, engineers, interior specialists, and
+                project managers work as one team so the final result stays
+                consistent from the first concept to the last site inspection.
               </p>
               <p>
-                Our work spans custom homes, apartment developments, commercial
-                spaces, office upgrades, and renovation-led transformation
-                projects across Karnataka.
+                Our work covers custom houses, apartment buildings, office
+                upgrades, reception areas, renovation-led transformations, and
+                premium interior packages across Karnataka.
               </p>
+
+              <div className={styles.statsGrid}>
+                {companyStats.map((item) => (
+                  <article className={styles.statCard} key={item.label}>
+                    <strong>{item.value}</strong>
+                    <p>{item.label}</p>
+                  </article>
+                ))}
+              </div>
             </article>
 
-            <div className={styles.statsGrid}>
-              {companyStats.map((item) => (
-                <article className={styles.statCard} key={item.label}>
-                  <strong>{item.value}</strong>
-                  <p>{item.label}</p>
+            <div className={styles.companyVisual}>
+              <article className={`${styles.photoCard} ${styles.companyLeadPhoto}`}>
+                <Image
+                  src="/photos/living-room.jpg"
+                  alt="Elegant living room interior designed by building company"
+                  fill
+                  sizes="(max-width: 1120px) 100vw, 42vw"
+                />
+                <div className={styles.photoOverlay}>
+                  <p className={styles.photoKicker}>Interior Detailing</p>
+                  <h2 className={styles.photoTitle}>Spaces that feel finished, calm, and genuinely livable.</h2>
+                </div>
+              </article>
+
+              <div className={styles.companyPhotoGrid}>
+                <article className={`${styles.photoCard} ${styles.companyMiniPhoto}`}>
+                  <Image
+                    src="/photos/construction-site.jpg"
+                    alt="Construction site with cranes"
+                    fill
+                    sizes="(max-width: 1120px) 100vw, 20vw"
+                  />
+                  <div className={styles.photoOverlay}>
+                    <p className={styles.photoKicker}>Execution</p>
+                    <h2 className={styles.photoTitle}>Live site supervision and staged delivery.</h2>
+                  </div>
                 </article>
-              ))}
+
+                <article className={`${styles.photoCard} ${styles.companyMiniPhoto}`}>
+                  <Image
+                    src="/photos/project-facade.jpg"
+                    alt="Modern facade detail"
+                    fill
+                    sizes="(max-width: 1120px) 100vw, 20vw"
+                  />
+                  <div className={styles.photoOverlay}>
+                    <p className={styles.photoKicker}>Facade Design</p>
+                    <h2 className={styles.photoTitle}>Modern geometry and material restraint.</h2>
+                  </div>
+                </article>
+              </div>
             </div>
           </div>
         </section>
 
-        <section className={styles.section} id="services">
+        <section className={`${styles.section} ${styles.servicesSection}`} id="services">
           <div className={styles.sectionHeader}>
             <p className={styles.eyebrow}>Services Section</p>
-            <h2 className={styles.sectionTitle}>What we deliver</h2>
+            <h2 className={styles.sectionTitle}>Design-first services with real construction depth</h2>
             <p className={styles.sectionText}>
-              Every service is built around clear planning, elegant material
-              choices, and disciplined on-site execution.
+              Each service combines visual quality with practical site logic, so
+              decisions work both aesthetically and technically.
             </p>
           </div>
 
           <div className={styles.servicesGrid}>
             {services.map((service) => (
               <article className={styles.serviceCard} key={service.title}>
-                <div className={styles.serviceIcon} aria-hidden="true">
-                  <span />
+                <div className={styles.serviceImageWrap}>
+                  <Image
+                    src={service.image}
+                    alt={service.title}
+                    fill
+                    sizes="(max-width: 680px) 100vw, (max-width: 1120px) 50vw, 25vw"
+                  />
+                  <span className={styles.serviceBadge}>{service.label}</span>
                 </div>
-                <h3>{service.title}</h3>
-                <p>{service.blurb}</p>
-                <ul>
-                  {service.bullets.map((bullet) => (
-                    <li key={bullet}>{bullet}</li>
-                  ))}
-                </ul>
+
+                <div className={styles.serviceBody}>
+                  <h3>{service.title}</h3>
+                  <p>{service.blurb}</p>
+                  <ul>
+                    {service.bullets.map((bullet) => (
+                      <li key={bullet}>{bullet}</li>
+                    ))}
+                  </ul>
+                </div>
               </article>
             ))}
           </div>
         </section>
 
-        <section className={styles.section} id="projects">
+        <section className={`${styles.section} ${styles.pictureSection}`} id="gallery">
+          <div className={styles.sectionHeader}>
+            <p className={styles.eyebrow}>Picture Gallery</p>
+            <h2 className={styles.sectionTitle}>Photography-led view of our design language</h2>
+            <p className={styles.sectionText}>
+              A curated visual slice of the textures, facades, interiors, and
+              construction environments that shape the kind of projects we take on.
+            </p>
+          </div>
+
+          <div className={styles.pictureWall}>
+            {photoMoments.map((item) => (
+              <article className={`${styles.photoCard} ${styles.pictureTile}`} key={item.title}>
+                <Image
+                  src={item.image}
+                  alt={item.title}
+                  fill
+                  sizes="(max-width: 1120px) 100vw, 33vw"
+                />
+                <div className={styles.photoOverlay}>
+                  <h2 className={styles.photoTitle}>{item.title}</h2>
+                </div>
+              </article>
+            ))}
+          </div>
+        </section>
+
+        <section className={`${styles.section} ${styles.projectsSection}`} id="projects">
           <div className={styles.sectionHeader}>
             <p className={styles.eyebrow}>Project Gallery</p>
-            <h2 className={styles.sectionTitle}>Completed buildings and active sites</h2>
+            <h2 className={styles.sectionTitle}>Completed buildings and ongoing projects</h2>
             <p className={styles.sectionText}>
-              A sample of completed buildings, interiors, and ongoing projects
-              currently moving through construction and fit-out.
+              From residential builds to facade upgrades and interior fit-outs,
+              the portfolio balances strong visual tone with buildable detail.
             </p>
           </div>
 
@@ -269,12 +400,12 @@ export default function Home() {
                     src={project.image}
                     alt={project.name}
                     fill
-                    sizes="(max-width: 900px) 100vw, 33vw"
+                    sizes="(max-width: 680px) 100vw, (max-width: 1120px) 50vw, 33vw"
                   />
                 </div>
                 <div className={styles.projectBody}>
                   <div className={styles.projectMeta}>
-                    <span>Completed</span>
+                    <span>{project.badge}</span>
                     <p>{project.location}</p>
                   </div>
                   <h3>{project.name}</h3>
@@ -288,10 +419,20 @@ export default function Home() {
           <div className={styles.ongoingGrid}>
             {ongoingProjects.map((project) => (
               <article className={styles.ongoingCard} key={project.title}>
-                <span>{project.phase}</span>
-                <h3>{project.title}</h3>
-                <p>{project.text}</p>
-                <strong>{project.meta}</strong>
+                <div className={styles.ongoingImageWrap}>
+                  <Image
+                    src={project.image}
+                    alt={project.title}
+                    fill
+                    sizes="(max-width: 680px) 100vw, (max-width: 1120px) 50vw, 33vw"
+                  />
+                </div>
+                <div className={styles.ongoingBody}>
+                  <span>{project.phase}</span>
+                  <h3>{project.title}</h3>
+                  <p>{project.text}</p>
+                  <strong>{project.meta}</strong>
+                </div>
               </article>
             ))}
           </div>
@@ -303,8 +444,8 @@ export default function Home() {
             <h2 className={styles.sectionTitle}>Request a building cost estimate</h2>
             <p className={styles.sectionText}>
               Share your project basics and our team will respond with an
-              initial cost view, planning guidance, and the recommended next
-              step for design or execution.
+              initial cost view, planning guidance, and the next step for
+              design or execution.
             </p>
             <ul className={styles.highlightList}>
               {quotationHighlights.map((item) => (
@@ -362,10 +503,11 @@ export default function Home() {
         <p>
           Aurum Buildworks delivers architecture, house construction, interior
           design, and renovation services with local SQLite-backed enquiry
-          capture.
+          capture. Photography references are sourced from Unsplash.
         </p>
         <div>
           <a href="#services">Services</a>
+          <a href="#gallery">Gallery</a>
           <a href="#projects">Projects</a>
           <a href="#quote">Quotation</a>
           <a href="#contact">Contact</a>
