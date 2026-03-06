@@ -18,6 +18,10 @@ export const metadata: Metadata = {
   title: "Aurum Buildworks | Construction, Architecture & Interiors",
   description:
     "A mobile-first building company website for architecture, house construction, renovation, interior design, and quotation requests.",
+  icons: {
+    icon: "/favicon.ico",
+    shortcut: "/favicon.ico",
+  },
 };
 
 export default function RootLayout({
