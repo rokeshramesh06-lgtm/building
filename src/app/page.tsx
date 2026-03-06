@@ -503,7 +503,7 @@ export default function Home() {
         <p>
           Aurum Buildworks delivers architecture, house construction, interior
           design, and renovation services with local SQLite-backed enquiry
-          capture. Photography references are sourced from Unsplash.
+          capture. Representative project photography is used for presentation.
         </p>
         <div>
           <a href="#services">Services</a>
