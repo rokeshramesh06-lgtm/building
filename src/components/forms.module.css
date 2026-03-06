@@ -1,0 +1,132 @@
+.card {
+  display: grid;
+  gap: 20px;
+  padding: 28px;
+  border-radius: 30px;
+  border: 1px solid rgba(255, 255, 255, 0.66);
+  background: var(--panel-strong);
+  box-shadow: var(--shadow-card);
+}
+
+.header {
+  display: grid;
+  gap: 10px;
+}
+
+.header h3 {
+  font-size: 1.55rem;
+  line-height: 1.15;
+}
+
+.header p,
+.note {
+  color: var(--ink-700);
+  line-height: 1.65;
+}
+
+.form {
+  display: grid;
+  gap: 16px;
+}
+
+.twoColumn {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 16px;
+}
+
+.field {
+  display: grid;
+  gap: 8px;
+}
+
+.field label {
+  font-size: 0.92rem;
+  font-weight: 700;
+  color: var(--ink-900);
+}
+
+.field input,
+.field select,
+.field textarea {
+  width: 100%;
+  border: 1px solid var(--line);
+  border-radius: 18px;
+  padding: 14px 16px;
+  background: rgba(255, 255, 255, 0.86);
+  color: var(--ink-900);
+  transition:
+    border-color 0.2s ease,
+    box-shadow 0.2s ease,
+    transform 0.2s ease;
+}
+
+.field textarea {
+  min-height: 150px;
+  resize: vertical;
+}
+
+.field input:focus,
+.field select:focus,
+.field textarea:focus {
+  outline: none;
+  border-color: rgba(183, 107, 60, 0.58);
+  box-shadow: 0 0 0 4px rgba(183, 107, 60, 0.12);
+  transform: translateY(-1px);
+}
+
+.button {
+  min-height: 56px;
+  width: fit-content;
+  border: 0;
+  border-radius: 999px;
+  padding: 0 24px;
+  color: var(--sand-050);
+  background: linear-gradient(135deg, var(--ink-900), #2d4053);
+  cursor: pointer;
+  transition:
+    transform 0.2s ease,
+    opacity 0.2s ease;
+}
+
+.button:hover:not(:disabled) {
+  transform: translateY(-1px);
+}
+
+.button:disabled {
+  cursor: wait;
+  opacity: 0.72;
+}
+
+.status {
+  min-height: 24px;
+  font-size: 0.94rem;
+  line-height: 1.4;
+}
+
+.success {
+  color: #23623f;
+}
+
+.error {
+  color: #8d2d2d;
+}
+
+.note {
+  font-size: 0.9rem;
+}
+
+@media (max-width: 640px) {
+  .card {
+    padding: 22px;
+    border-radius: 24px;
+  }
+
+  .twoColumn {
+    grid-template-columns: 1fr;
+  }
+
+  .button {
+    width: 100%;
+  }
+}

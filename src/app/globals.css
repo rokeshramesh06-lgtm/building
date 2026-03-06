@@ -1,13 +1,19 @@
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+  --sand-050: #fdfbf7;
+  --sand-100: #f8f3ec;
+  --sand-200: #efe6d8;
+  --sand-300: #e1d3bf;
+  --ink-900: #16202d;
+  --ink-700: #53606d;
+  --ink-500: #7b8792;
+  --copper-600: #b76b3c;
+  --copper-700: #8d4e29;
+  --copper-100: rgba(183, 107, 60, 0.12);
+  --panel: rgba(255, 255, 255, 0.72);
+  --panel-strong: rgba(255, 255, 255, 0.88);
+  --line: rgba(22, 32, 45, 0.12);
+  --shadow-soft: 0 24px 60px rgba(22, 32, 45, 0.12);
+  --shadow-card: 0 14px 34px rgba(22, 32, 45, 0.09);
 }
 
 html,
@@ -16,10 +22,15 @@ body {
   overflow-x: hidden;
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
 body {
-  color: var(--foreground);
-  background: var(--background);
-  font-family: Arial, Helvetica, sans-serif;
+  min-height: 100vh;
+  color: var(--ink-900);
+  background: var(--sand-100);
+  font-family: var(--font-body), sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
@@ -35,8 +46,20 @@ a {
   text-decoration: none;
 }
 
-@media (prefers-color-scheme: dark) {
-  html {
-    color-scheme: dark;
-  }
+button,
+input,
+select,
+textarea {
+  font: inherit;
+}
+
+img,
+svg {
+  display: block;
+  max-width: 100%;
+}
+
+::selection {
+  color: var(--sand-050);
+  background: var(--copper-600);
 }
